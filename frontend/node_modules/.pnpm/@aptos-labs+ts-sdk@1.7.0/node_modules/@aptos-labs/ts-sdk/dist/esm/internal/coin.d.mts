@@ -1,0 +1,42 @@
+import { AptosConfig } from '../api/aptosConfig.mjs';
+import { AccountAddressInput } from '../core/accountAddress.mjs';
+import { AnyNumber, MoveStructId } from '../types/index.mjs';
+import { InputGenerateTransactionOptions, SimpleTransaction } from '../transactions/types.mjs';
+import '../utils/apiEndpoints.mjs';
+import '../utils/const.mjs';
+import '../types/indexer.mjs';
+import '../types/generated/operations.mjs';
+import '../types/generated/types.mjs';
+import '../bcs/serializer.mjs';
+import '../core/hex.mjs';
+import '../core/common.mjs';
+import '../bcs/deserializer.mjs';
+import '../transactions/instances/transactionArgument.mjs';
+import '../bcs/serializable/moveStructs.mjs';
+import '../bcs/serializable/movePrimitives.mjs';
+import '../bcs/serializable/fixedBytes.mjs';
+import '../core/crypto/asymmetricCrypto.mjs';
+import '../transactions/instances/rawTransaction.mjs';
+import '../transactions/instances/chainId.mjs';
+import '../transactions/instances/transactionPayload.mjs';
+import '../transactions/instances/identifier.mjs';
+import '../transactions/instances/moduleId.mjs';
+import '../transactions/typeTag/index.mjs';
+import '../transactions/authenticator/account.mjs';
+import '../core/crypto/anyPublicKey.mjs';
+import '../core/crypto/anySignature.mjs';
+import '../core/crypto/ed25519.mjs';
+import '../core/crypto/secp256k1.mjs';
+import '../core/crypto/multiEd25519.mjs';
+import '../core/crypto/multiKey.mjs';
+
+declare function transferCoinTransaction(args: {
+    aptosConfig: AptosConfig;
+    sender: AccountAddressInput;
+    recipient: AccountAddressInput;
+    amount: AnyNumber;
+    coinType?: MoveStructId;
+    options?: InputGenerateTransactionOptions;
+}): Promise<SimpleTransaction>;
+
+export { transferCoinTransaction };
